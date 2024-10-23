@@ -4,6 +4,6 @@ type Props = {
   children: ReactNode
 }
 
-export default function LayoutGuest({ children }: Props) {
+export default function NoAuthenticated({ children }: Props) {
   return <div className="bg-gray-50 dark:bg-slate-800 dark:text-slate-100">{children}</div>
 }

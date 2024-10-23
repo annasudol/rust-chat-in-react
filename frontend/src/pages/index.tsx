@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React, { ReactElement } from 'react'
 import CardBox from '../components/CardBox'
-import LayoutGuest from '../layouts/Guest'
+import NoAuthenticated from '../layouts/NoAuthenticated'
 import SectionMain from '../components/Section/Main'
 import { gradientBgPurplePink } from '../colors'
 import { appTitle } from '../config'
@@ -41,7 +41,7 @@ const StyleSelectPage = () => {
 }
 
 StyleSelectPage.getLayout = function getLayout(page: ReactElement) {
-  return <LayoutGuest>{page}</LayoutGuest>
+  return <NoAuthenticated>{page}</NoAuthenticated>
 }
 
 export default StyleSelectPage

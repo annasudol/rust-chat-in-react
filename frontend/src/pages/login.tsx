@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Button from '../components/Button'
 import CardBox from '../components/CardBox'
 import SectionFullScreen from '../components/Section/FullScreen'
-import LayoutGuest from '../layouts/Guest'
+import NoAuthenticated from '../layouts/NoAuthenticated'
 import { Field, Form, Formik } from 'formik'
 import FormField from '../components/Form/Field'
 import FormCheckRadio from '../components/Form/CheckRadio'
@@ -40,34 +40,36 @@ const LoginPage = () => {
 
       <SectionFullScreen bg="purplePink">
         <CardBox className="w-11/12 md:w-7/12 lg:w-6/12 xl:w-4/12 shadow-2xl">
-          <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={Schema}>
-            {({ values, errors, handleSubmit, handleChange, handleBlur }) => {
-              return (
-                <Form>
-                  <FormField label="Login" help="Please enter your login">
-                    <Field name="login" />
-                  </FormField>
-                  <p className="text-red-500 -mt-5">{errors?.login?.toString()}</p>
-                  <FormField label="Password" help="Please enter your password">
-                    <Field name="password" type="password" />
-                  </FormField>
-                  <p className="text-red-500 -mt-5">{errors?.password?.toString()}</p>
-                  <FormField label="Password" help="Please confirm your password">
-                    <Field name="passwordRepeat" type="password" />
-                  </FormField>
-                  <Buttons>
-                    <Button type="submit" label="Login" color="info" className="px-8" />
-                  </Buttons>
+          <>
+            <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={Schema}>
+              {({ values, errors, handleSubmit, handleChange, handleBlur }) => {
+                return (
+                  <Form>
+                    <FormField label="Login" help="Please enter your login">
+                      <Field name="login" />
+                    </FormField>
+                    <p className="text-red-500 -mt-5">{errors?.login?.toString()}</p>
+                    <FormField label="Password" help="Please enter your password">
+                      <Field name="password" type="password" />
+                    </FormField>
+                    <p className="text-red-500 -mt-5">{errors?.password?.toString()}</p>
+                    <FormField label="Password" help="Please confirm your password">
+                      <Field name="passwordRepeat" type="password" />
+                    </FormField>
+                    <Buttons>
+                      <Button type="submit" label="Login" color="info" className="px-8" />
+                    </Buttons>
 
-                  <Divider />
-                </Form>
-              )
-            }}
-          </Formik>
-          <p className="text-base text-gray-700 mt-4">
-            Don't have an account
-            <Button href="/register" label="Sing up" type="href" />
-          </p>
+                    <Divider />
+                  </Form>
+                )
+              }}
+            </Formik>
+            <p className="text-base text-gray-700 mt-4">
+              Don't have an account
+              <Button href="/register" label="Sing up" type="href" />
+            </p>
+          </>
         </CardBox>
       </SectionFullScreen>
     </>
@@ -75,7 +77,7 @@ const LoginPage = () => {
 }
 
 LoginPage.getLayout = function getLayout(page: ReactElement) {
-  return <LayoutGuest>{page}</LayoutGuest>
+  return <NoAuthenticated>{page}</NoAuthenticated>
 }
 
 export default LoginPage

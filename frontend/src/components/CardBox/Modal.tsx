@@ -44,13 +44,15 @@ const CardBoxModal = ({
         isModal
         footer={footer}
       >
-        <CardBoxComponentTitle title={title}>
-          {!!onCancel && (
-            <Button icon={mdiClose} color="whiteDark" onClick={onCancel} small roundedFull />
-          )}
-        </CardBoxComponentTitle>
+        <>
+          <CardBoxComponentTitle title={title}>
+            {!!onCancel && (
+              <Button icon={mdiClose} color="whiteDark" onClick={onCancel} small roundedFull />
+            )}
+          </CardBoxComponentTitle>
 
-        <div className="space-y-3">{children}</div>
+          <div className="space-y-3">{children}</div>
+        </>
       </CardBox>
     </OverlayLayer>
   )
