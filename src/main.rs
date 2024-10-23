@@ -4,8 +4,6 @@
 use actix_cors::Cors;
 use actix_files::Files;
 use actix_web::{web, http, App, HttpServer};
-
-// use 
 use diesel::{r2d2::{self, ConnectionManager}, sqlite::SqliteConnection};
 
 mod db;
@@ -39,7 +37,7 @@ async fn main() -> std::io::Result<()> {
             // .app_data(web::Data::new(server.clone()))
             .app_data(web::Data::new(pool.clone()))
             .wrap(cors)
-            // .service(web::resource("/").to(routes::index))
+            //.service(web::resource("/").to(routes::index))
             // .route("/ws", web::get().to(routes::chat_server))
             // .service(routes::create_user)
             // .service(routes::get_user_by_id)
