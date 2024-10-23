@@ -4,65 +4,121 @@ import Head from 'next/head';
 import * as React from 'react';
 import '@/lib/env';
 
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 
-/**
- * SVGR Support
- * Caveat: No React Props Type.
- *
- * You can override the next-env if the type is important to you
- * @see https://stackoverflow.com/questions/68103844/how-to-override-next-js-svg-module-declaration
- */
-import Logo from '~/svg/Logo.svg';
-
-// !STARTERCONF -> Select !STARTERCONF and CMD + SHIFT + F
-// Before you begin editing, follow all comments with `STARTERCONF`,
-// to customize the default configuration.
+import { siteConfig } from '@/constant/config';
 
 export default function HomePage() {
   return (
     <main>
       <Head>
-        <title>Hi</title>
+        <title>{siteConfig.title}</title>
       </Head>
       <section className='bg-white'>
-        <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
-          <Logo className='w-16' />
-          <h1 className='mt-4'>Next.js + Tailwind CSS + TypeScript Starter</h1>
-          <p className='mt-2 text-sm text-gray-800'>
-            A starter for Next.js, Tailwind CSS, and TypeScript with Absolute
-          </p>
-          <p className='mt-2 text-sm text-gray-700'>
-       
-          </p>
-
-          <ButtonLink className='mt-6' href='/components' variant='light'>
-            See all components
-          </ButtonLink>
-
-          <UnstyledLink
-            href='https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Ftheodorusclarence%2Fts-nextjs-tailwind-starter'
-            className='mt-4'
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              width='92'
-              height='32'
-              src='https://vercel.com/button'
-              alt='Deploy with Vercel'
-            />
-          </UnstyledLink>
-
-          <footer className='absolute bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://github.com/annasudol'>
-              Anna Sudol
-            </UnderlineLink>
-          </footer>
+        <div className="overflow-y-auto h-screen p-3 mb-9 pb-20">
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Alice</h2>
+                <p className="text-gray-600">Hoorayy!!</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/ad922e/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Martin</h2>
+                <p className="text-gray-600">That pizza place was amazing! We should go again sometime. 🍕</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/2e83ad/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Charlie</h2>
+                <p className="text-gray-600">Hey, do you have any recommendations for a good movie to watch?</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/c2ebff/0f0b14.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">David</h2>
+                <p className="text-gray-600">I just finished reading a great book! It was so captivating.</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Ella</h2>
+                <p className="text-gray-600">What's the plan for this weekend? Anything fun?</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/ffc2e2/ffdbdb.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Fiona</h2>
+                <p className="text-gray-600">I heard there's a new exhibit at the art museum. Interested?</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/f83f3f/4f4f4f.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">George</h2>
+                <p className="text-gray-600">I tried that new cafe downtown. The coffee was fantastic!</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/dddddd/999999.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Hannah</h2>
+                <p className="text-gray-600">I'm planning a hiking trip next month. Want to join?</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/70ff33/501616.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Ian</h2>
+                <p className="text-gray-600">Let's catch up soon. It's been too long!</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center mb-4 cursor-pointer hover:bg-gray-100 p-2 rounded-md">
+              <div className="w-12 h-12 bg-gray-300 rounded-full mr-3">
+                <img src="https://placehold.co/200x/30916c/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato" alt="User Avatar" className="w-12 h-12 rounded-full"/>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-semibold">Jack</h2>
+                <p className="text-gray-600">Remember that hilarious joke you told me? I can't stop laughing!</p>
+              </div>
+            </div>
+            
         </div>
+    
+            
+        
       </section>
     </main>
   );
