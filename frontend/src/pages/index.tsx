@@ -36,31 +36,7 @@ const StyleSelectPage = () => {
       <Head>
         <title>{appTitle}</title>
       </Head>
-      <div className={`flex min-h-screen items-center justify-center ${gradientBgPurplePink}`}>
-        <SectionMain>
-          <h1 className="text-4xl md:text-5xl text-center text-white font-bold mt-12 mb-3 lg:mt-0">
-            Pick a style&hellip;
-          </h1>
-          <h2 className="text-xl md:text-xl text-center text-white mb-12">
-            Style switching with a single{' '}
-            <code className="px-1.5 py-0.5 rounded bg-white bg-opacity-20">action()</code>
-          </h2>
-          <div className="grid gap-6 grid-cols-1 lg:grid-cols-2 px-6 max-w-6xl mx-auto">
-            {styles.map((style) => (
-              <CardBox
-                key={style}
-                className="cursor-pointer bg-gray-50"
-                isHoverable
-                onClick={(e) => handleStylePick(e, style)}
-              >
-             
-                <h1 className="text-xl md:text-2xl font-black capitalize">{style}</h1>
-                <h2 className="text-lg md:text-xl">& Dark mode</h2>
-              </CardBox>
-            ))}
-          </div>
-        </SectionMain>
-      </div>
+
     </>
   )
 }

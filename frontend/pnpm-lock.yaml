@@ -1,6 +1,6 @@
 lockfileVersion: '9.0'
 
-settings:
+s:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
@@ -54,6 +54,9 @@ importers:
       '@types/numeral':
         specifier: ^2.0.2
         version: 2.0.5
+      '@types/react':
+        specifier: 18.3.12
+        version: 18.3.12
       '@types/react-redux':
         specifier: ^7.1.25
         version: 7.1.34

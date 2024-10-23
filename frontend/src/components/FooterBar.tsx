@@ -1,12 +1,11 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { containerMaxW } from '../config'
-import JustboilLogo from './JustboilLogo'
+import { mdiGithub } from '@mdi/js'
+import Button from './Button'
 
-type Props = {
-  children: ReactNode
-}
 
-export default function FooterBar({ children }: Props) {
+
+export default function FooterBar() {
   const year = new Date().getFullYear()
 
   return (
@@ -15,18 +14,22 @@ export default function FooterBar({ children }: Props) {
         <div className="text-center md:text-left mb-6 md:mb-0">
           <b>
             &copy;{year},{` `}
-            <a href="https://justboil.me/" rel="noreferrer" target="_blank">
-              JustBoil.me
+            <a href="https://github.com/annasudol" rel="noreferrer" target="_blank">
+              Anna Sudol
             </a>
             .
           </b>
-          {` `}
-          {children}
         </div>
         <div className="md:py-2">
-          <a href="https://justboil.me" rel="noreferrer" target="_blank">
-            <JustboilLogo className="w-auto h-8 md:h-6 mx-auto" />
-          </a>
+          <Button
+            href="https://github.com/sudolann"
+            target="_blank"
+            icon={mdiGithub}
+            label="Star on GitHub"
+            color="contrast"
+            roundedFull
+            small
+          />
         </div>
       </div>
     </footer>

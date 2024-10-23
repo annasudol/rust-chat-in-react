@@ -1,16 +1,12 @@
 import {
   mdiAccountCircle,
   mdiMonitor,
-  mdiGithub,
   mdiLock,
   mdiAlertCircle,
   mdiSquareEditOutline,
-  mdiTable,
-  mdiViewList,
   mdiTelevisionGuide,
   mdiResponsive,
   mdiPalette,
-  mdiVuejs,
 } from '@mdi/js'
 import { MenuAsideItem } from './interfaces'
 
@@ -19,11 +15,6 @@ const menuAside: MenuAsideItem[] = [
     href: '/dashboard',
     icon: mdiMonitor,
     label: 'Dashboard',
-  },
-  {
-    href: '/tables',
-    label: 'Tables',
-    icon: mdiTable,
   },
   {
     href: '/forms',
@@ -59,30 +50,6 @@ const menuAside: MenuAsideItem[] = [
     href: '/error',
     label: 'Error',
     icon: mdiAlertCircle,
-  },
-  {
-    label: 'Dropdown',
-    icon: mdiViewList,
-    menu: [
-      {
-        label: 'Item One',
-      },
-      {
-        label: 'Item Two',
-      },
-    ],
-  },
-  {
-    href: 'https://github.com/justboil/admin-one-react-tailwind',
-    label: 'GitHub',
-    icon: mdiGithub,
-    target: '_blank',
-  },
-  {
-    href: 'https://github.com/justboil/admin-one-vue-tailwind',
-    label: 'Vue version',
-    icon: mdiVuejs,
-    target: '_blank',
   },
 ]
 

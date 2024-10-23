@@ -14,42 +14,15 @@ import {
 import { MenuNavBarItem } from './interfaces'
 
 const menuNavBar: MenuNavBarItem[] = [
-  {
-    icon: mdiMenu,
-    label: 'Sample menu',
-    menu: [
-      {
-        icon: mdiClockOutline,
-        label: 'Item One',
-      },
-      {
-        icon: mdiCloud,
-        label: 'Item Two',
-      },
-      {
-        isDivider: true,
-      },
-      {
-        icon: mdiCrop,
-        label: 'Item Last',
-      },
-    ],
-  },
+
   {
     isCurrentUser: true,
     menu: [
       {
-        icon: mdiAccount,
-        label: 'My Profile',
-        href: '/profile',
-      },
-      {
         icon: mdiCogOutline,
         label: 'Settings',
-      },
-      {
-        icon: mdiEmail,
-        label: 'Messages',
+        href: '/profile'
+        
       },
       {
         isDivider: true,
@@ -71,21 +44,8 @@ const menuNavBar: MenuNavBarItem[] = [
     icon: mdiGithub,
     label: 'GitHub',
     isDesktopNoLabel: true,
-    href: 'https://github.com/justboil/admin-one-react-tailwind',
+    href: 'https://github.com/sudolann',
     target: '_blank',
-  },
-  {
-    icon: mdiVuejs,
-    label: 'Vue version',
-    isDesktopNoLabel: true,
-    href: 'https://github.com/justboil/admin-one-vue-tailwind',
-    target: '_blank',
-  },
-  {
-    icon: mdiLogout,
-    label: 'Log out',
-    isDesktopNoLabel: true,
-    isLogout: true,
   },
 ]
 

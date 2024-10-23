@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getButtonColor } from '../colors'
 import Icon from './Icon'
 import type { ColorButtonKey } from '../interfaces'
+import { twMerge } from 'tailwind-merge'
 
 type Props = {
   label?: string
@@ -39,7 +40,7 @@ export default function Button({
   roundedFull = false,
   onClick,
 }: Props) {
-  const componentClass = [
+  const componentClass = twMerge([
     'inline-flex',
     'justify-center',
     'items-center',
@@ -53,21 +54,10 @@ export default function Button({
     roundedFull ? 'rounded-full' : 'rounded',
     getButtonColor(color, outline, !disabled, active),
     className,
-  ]
-
-  if (!label && icon) {
-    componentClass.push('p-1')
-  } else if (small) {
-    componentClass.push('text-sm', roundedFull ? 'px-3 py-1' : 'p-1')
-  } else {
-    componentClass.push('py-2', roundedFull ? 'px-6' : 'px-3')
-  }
-
-  if (disabled) {
-    componentClass.push(outline ? 'opacity-50' : 'opacity-70')
-  }
-
-  const componentClassString = componentClass.join(' ')
+    !label && icon && 'p-1',
+    small  ? 'text-sm' : 'py-2',
+    outline && 'opacity-50',
+  ]);
 
   const componentChildren = (
     <>
@@ -78,7 +68,7 @@ export default function Button({
 
   if (href && !disabled) {
     return (
-      <Link href={href} target={target} className={componentClassString}>
+      <Link href={href} target={target} className={componentClass}>
         {componentChildren}
       </Link>
     )
@@ -86,7 +76,7 @@ export default function Button({
 
   return React.createElement(
     asAnchor ? 'a' : 'button',
-    { className: componentClassString, type: type ?? 'button', target, disabled, onClick },
+    { className: componentClass, type: type ?? 'button', target, disabled, onClick },
     componentChildren
   )
 }
