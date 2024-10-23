@@ -38,14 +38,13 @@ export default function LayoutAuthenticated({ children }: Props) {
     }
   }, [router.events])
 
-  const layoutAsidePadding = 'xl:pl-60 pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100'
+  const layoutAsidePadding =
+    'xl:pl-60 pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100'
 
   return (
     <div className="overflow-hidden lg:overflow-visible">
-      <div className={twMerge([layoutAsidePadding, isAsideMobileExpanded && 'ml-60 lg:ml-0', ])}>
-        <NavBar
-          menu={menuNavBar}
-        >
+      <div className={twMerge([layoutAsidePadding, isAsideMobileExpanded && 'ml-60 lg:ml-0'])}>
+        <NavBar menu={menuNavBar}>
           <NavBarItemPlain
             display="flex lg:hidden"
             onClick={() => setIsAsideMobileExpanded(!isAsideMobileExpanded)}

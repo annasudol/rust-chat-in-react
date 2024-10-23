@@ -12,60 +12,62 @@ import Divider from '../components/Divider'
 import Buttons from '../components/Buttons'
 import { useRouter } from 'next/router'
 import { getPageTitle } from '../config'
-
-type LoginForm = {
-  login: string
-  password: string
-  remember: boolean
-}
+import * as Yup from 'yup'
 
 const LoginPage = () => {
   const router = useRouter()
 
-  const handleSubmit = (formValues: LoginForm) => {
+  const handleSubmit = (formValues) => {
     router.push('/dashboard')
     console.log('Form values', formValues)
   }
 
-  const initialValues: LoginForm = {
+  const initialValues = {
     login: 'john.doe',
     password: 'bG1sL9eQ1uD2sK3b',
     remember: true,
   }
 
+  const Schema = Yup.object().shape({
+    login: Yup.string().required('This field is required'),
+    password: Yup.string().required('This field is required'),
+  })
   return (
     <>
       <Head>
-        <title>{getPageTitle('Login')}</title>
+        <title>{getPageTitle('Register')}</title>
       </Head>
 
       <SectionFullScreen bg="purplePink">
         <CardBox className="w-11/12 md:w-7/12 lg:w-6/12 xl:w-4/12 shadow-2xl">
-          <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-            <Form>
-              <FormField label="Login" help="Please enter your login">
-                <Field name="login" />
-              </FormField>
+          <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={Schema}>
+            {({ values, errors, handleSubmit, handleChange, handleBlur }) => {
+              return (
+                <Form>
+                  <FormField label="Login" help="Please enter your login">
+                    <Field name="login" />
+                  </FormField>
+                  <p className="text-red-500 -mt-5">{errors?.login?.toString()}</p>
+                  <FormField label="Password" help="Please enter your password">
+                    <Field name="password" type="password" />
+                  </FormField>
+                  <p className="text-red-500 -mt-5">{errors?.password?.toString()}</p>
+                  <FormField label="Password" help="Please confirm your password">
+                    <Field name="passwordRepeat" type="password" />
+                  </FormField>
+                  <Buttons>
+                    <Button type="submit" label="Login" color="info" className="px-8" />
+                  </Buttons>
 
-              <FormField label="Password" help="Please enter your password">
-                <Field name="password" type="password" />
-              </FormField>
-
-              <FormCheckRadio type="checkbox" label="Remember">
-                <Field type="checkbox" name="remember" />
-              </FormCheckRadio>
-
-            
-
-              <Buttons>
-                <Button type="submit" label="Login" color="info" />
-              </Buttons>
-              <Divider />
-            </Form>
-        
+                  <Divider />
+                </Form>
+              )
+            }}
           </Formik>
-          <p className="text-base text-gray-700 mt-4">Don't have username? 
-          <Button href="/regiser"  label='Create' type='href' /></p>
+          <p className="text-base text-gray-700 mt-4">
+            Don't have an account
+            <Button href="/register" label="Sing up" type="href" />
+          </p>
         </CardBox>
       </SectionFullScreen>
     </>

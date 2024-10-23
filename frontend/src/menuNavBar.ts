@@ -14,15 +14,13 @@ import {
 import { MenuNavBarItem } from './interfaces'
 
 const menuNavBar: MenuNavBarItem[] = [
-
   {
     isCurrentUser: true,
     menu: [
       {
         icon: mdiCogOutline,
         label: 'Settings',
-        href: '/profile'
-        
+        href: '/profile',
       },
       {
         isDivider: true,

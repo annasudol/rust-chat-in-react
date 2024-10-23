@@ -19,9 +19,7 @@ export default function NavBar({ menu, children }: Props) {
   }
 
   return (
-    <nav
-      className="top-0 inset-x-0 fixed bg-gray-50 h-14 z-30 transition-position w-screen lg:w-auto dark:bg-slate-800"
-    >
+    <nav className="top-0 inset-x-0 fixed bg-gray-50 h-14 z-30 transition-position w-screen lg:w-auto dark:bg-slate-800">
       <div className={`flex lg:items-stretch ${containerMaxW}`}>
         <div className="flex flex-1 items-stretch h-14">{children}</div>
         <div className="flex-none items-stretch flex h-14 lg:hidden">

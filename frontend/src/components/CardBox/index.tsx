@@ -34,8 +34,8 @@ export default function CardBox({
     rounded,
     flex,
     isModal ? 'dark:bg-slate-900' : 'dark:bg-slate-900/70',
-    isHoverable && 'hover:shadow-lg transition-shadow duration-500'
-  ]);
+    isHoverable && 'hover:shadow-lg transition-shadow duration-500',
+  ])
 
   return React.createElement(
     'div',

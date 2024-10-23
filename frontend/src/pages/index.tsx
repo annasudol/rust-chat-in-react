@@ -36,7 +36,6 @@ const StyleSelectPage = () => {
       <Head>
         <title>{appTitle}</title>
       </Head>
-
     </>
   )
 }

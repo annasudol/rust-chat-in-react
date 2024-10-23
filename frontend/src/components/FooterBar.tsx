@@ -3,8 +3,6 @@ import { containerMaxW } from '../config'
 import { mdiGithub } from '@mdi/js'
 import Button from './Button'
 
-
-
 export default function FooterBar() {
   const year = new Date().getFullYear()
 

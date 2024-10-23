@@ -55,9 +55,11 @@ export default function Button({
     getButtonColor(color, outline, !disabled, active),
     className,
     !label && icon && 'p-1',
-    small  ? 'text-sm' : 'py-2',
+    small ? 'text-sm' : 'py-2',
     outline && 'opacity-50',
-  ]);
+    href &&
+      'border-none bg-transparent hover:bg-transparent focus:bg-transparent focus:ring-0 outline-none text-blue-700 hover:text-blue-900',
+  ])
 
   const componentChildren = (
     <>

@@ -15,7 +15,8 @@ const CardBoxUser = ({ className }: Props) => {
 
   return (
     <CardBox className={className}>
-      <div className="flex flex-col lg:flex-row items-center justify-around lg:justify-center">x
+      <div className="flex flex-col lg:flex-row items-center justify-around lg:justify-center">
+        x
         <UserAvatarCurrentUser className="mb-6 lg:mb-0 lg:mx-12" />
         <div className="space-y-3 text-center md:text-left lg:mx-12">
           <h1 className="text-2xl">

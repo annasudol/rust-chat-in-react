@@ -4,6 +4,7 @@ import { ColorKey } from '../interfaces'
 import { colorsBgLight, colorsOutline } from '../colors'
 import Button from './Button'
 import Icon from './Icon'
+import { twMerge } from 'tailwind-merge'
 
 type Props = {
   color: ColorKey
@@ -11,9 +12,11 @@ type Props = {
   outline?: boolean
   children: ReactNode
   button?: ReactNode
+  iconClose?: boolean
+  class?: string
 }
 
-const NotificationBar = ({ outline = false, children, ...props }: Props) => {
+const NotificationBar = ({ outline = false, iconClose = true, children, ...props }: Props) => {
   const componentColorClass = outline ? colorsOutline[props.color] : colorsBgLight[props.color]
 
   const [isDismissed, setIsDismissed] = useState(false)
@@ -30,7 +33,11 @@ const NotificationBar = ({ outline = false, children, ...props }: Props) => {
 
   return (
     <div
-      className={`px-3 py-6 md:py-3 mb-6 last:mb-0 border rounded-lg transition-colors duration-150 ${componentColorClass}`}
+      className={twMerge(
+        'px-3 py-6 md:py-3 mb-6 last:mb-0 border rounded-lg transition-colors duration-150',
+        componentColorClass,
+        props.color
+      )}
     >
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="flex flex-col md:flex-row items-center mb-6 md:mb-0">
@@ -40,7 +47,7 @@ const NotificationBar = ({ outline = false, children, ...props }: Props) => {
           <span className="text-center md:text-left md:py-2">{children}</span>
         </div>
         {props.button}
-        {!props.button && (
+        {!props.button && iconClose && (
           <Button icon={mdiClose} color="white" onClick={dismiss} small roundedFull />
         )}
       </div>
